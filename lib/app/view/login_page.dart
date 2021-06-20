@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_crud_postgre1/app/model/dao/postgre/conexao.dart';
 import 'package:flutter_crud_postgre1/app/routes/app_routes.dart';
 
 class LoginPage extends StatefulWidget {
@@ -102,6 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                           if (login == 'als' ||
                               login == 'als@teste.com' && senha == '123') {
                             print('Parabens voce logou!');
+
                             //Carrega  tela nomeada:
                             Navigator.of(context).pushNamed(AppRoutes.HOME);
                           } else {

@@ -1,15 +1,16 @@
 import 'package:postgres/postgres.dart';
 
 class Conexao {
-  //inicializa a conexao:
+  //inicializa a conexao Vazia:
   static PostgreSQLConnection _conexaoPostgreSQL = new PostgreSQLConnection(
     "",
     0,
     "",
   );
 
+  //Ajustar para Singleton:
   static Future<PostgreSQLConnection> getConexao() async {
-    //Teste se a conexção esta fechada ou com valor inicial:
+    //Teste se a conexão esta fechada ou com valor inicial:
     if (_conexaoPostgreSQL == PostgreSQLConnection("", 0, "") ||
         _conexaoPostgreSQL.isClosed) {
       _conexaoPostgreSQL = new PostgreSQLConnection(
